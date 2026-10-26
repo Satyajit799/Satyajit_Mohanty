@@ -1,0 +1,156 @@
+import { motion, useReducedMotion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
+
+export default function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const hoverLift = shouldReduceMotion ? {} : { y: -4 };
+
+  return (
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[#080B14] text-white"
+    >
+      <div className="mx-6 grid grid-cols-1 items-center gap-8 py-10 md:mx-10 md:grid-cols-2 md:gap-10 md:py-20">
+        {/* Left: Introduction */}
+        <div className="flex flex-col gap-7">
+          {/* Availability badge */}
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="w-fit rounded-full border border-[#293349] bg-[#111726] px-4 py-2"
+          >
+            <div className="flex items-center gap-2">
+              <span className="size-2 rounded-full bg-[#33D499]" />
+              <span className="text-xs font-medium text-[#33D499] sm:text-sm">
+                Open to Junior Developer Opportunities
+              </span>
+            </div>
+          </motion.div>
+
+          {/* Main text */}
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            whileHover={hoverLift}
+            className="space-y-5"
+          >
+            <p className="text-sm font-medium uppercase tracking-[0.25em] text-gray-400">
+              Hello, I'm
+            </p>
+
+            <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              <motion.span
+                className="inline-block bg-linear-to-r from-[#7D5CFF] to-[#21D1ED] bg-clip-text text-transparent"
+                whileHover={shouldReduceMotion ? undefined : { scale: 1.03 }}
+                transition={{ duration: 0.25 }}
+              >
+                Satyajit Mohanty.
+              </motion.span>
+            </h1>
+
+            <h2 className="text-lg font-medium text-[#21D1ED] sm:text-xl">
+              A Cerified Full-Stack MERN Developer
+            </h2>
+
+            <p className="max-w-xl text-sm leading-7 text-gray-300 sm:text-base">
+              I'm an MCA student passionate about building useful web
+              applications. I work with React, JavaScript, Node.js, Express, and
+              MongoDB while continuously improving my development skills through
+              hands-on projects.
+            </p>
+          </motion.div>
+
+          {/* Action buttons */}
+          <motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-wrap items-center gap-4"
+          >
+            <motion.a
+              href="#projects"
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.2 }}
+              className="inline-flex items-center gap-2 rounded-xl bg-[#7D5CFF] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#7D5CFF]/20 transition-colors hover:bg-[#6A48ED] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#21D1ED]"
+            >
+              Explore Projects
+              <ArrowUpRight size={18} />
+            </motion.a>
+
+            <motion.a
+              href="#contact"
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.2 }}
+              className="inline-flex items-center gap-2 rounded-xl border border-[#293349] bg-[#111726] px-5 py-3 text-sm font-semibold text-gray-200 transition-colors hover:border-[#7D5CFF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7D5CFF]"
+            >
+              Contact Me
+            </motion.a>
+          </motion.div>
+        </div>
+
+        {/* Right: Avatar */}
+        <motion.div
+          initial={
+            shouldReduceMotion ? false : { opacity: 0, scale: 0.92, x: 20 }
+          }
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative mx-auto w-full max-w-md items-center"
+        >
+          {/* Decorative glow */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-8 rounded-full bg-[#7D5CFF]/20 blur-3xl"
+          />
+
+          {/* Avatar container */}
+          <motion.div
+            whileHover={shouldReduceMotion ? undefined : { y: -5 }}
+            transition={{ duration: 0.3 }}
+            className="relative flex aspect-square items-center justify-center overflow-hidden rounded-3xl border border-[#293349] bg-linear-to-br from-[#162030] to-[#0B1020] shadow-2xl shadow-[#7D5CFF]/10"
+          >
+            {/* Replace this placeholder with your profile image */}
+            <div className="text-center">
+              <div className="mx-auto mb-5 flex size-28 items-center justify-center rounded-full border border-[#7D5CFF]/50 bg-[#7D5CFF]/10 text-4xl font-bold text-[#21D1ED] sm:size-36 sm:text-5xl">
+                SM
+              </div>
+
+              <p className="text-xl font-semibold text-white">
+                Developer & Builder
+              </p>
+
+              <p className="mt-2 text-sm text-gray-400">
+                Learning by building.
+              </p>
+            </div>
+
+            {/* Floating tech badge */}
+            <motion.div
+              animate={shouldReduceMotion ? undefined : { y: [0, -6, 0] }}
+              transition={
+                shouldReduceMotion
+                  ? undefined
+                  : {
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }
+              }
+              className="absolute bottom-6 right-5 rounded-xl border border-[#293349] bg-[#111726]/95 px-4 py-3 shadow-xl sm:bottom-8 sm:right-8"
+            >
+              <p className="text-xs text-gray-400">Currently building with</p>
+              <p className="mt-1 text-sm font-semibold text-[#33D499]">
+                React + Node.js
+              </p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
