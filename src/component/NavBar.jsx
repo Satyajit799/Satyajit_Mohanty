@@ -55,16 +55,16 @@ const NavBar = () => {
 
   const panelVariants = shouldReduceMotion
     ? {
-        closed: { opacity: 0 },
-        open: { opacity: 1 },
-      }
+      closed: { opacity: 0 },
+      open: { opacity: 1 },
+    }
     : menuVariants;
 
   const itemVariants = shouldReduceMotion
     ? {
-        closed: { opacity: 0 },
-        open: { opacity: 1 },
-      }
+      closed: { opacity: 0 },
+      open: { opacity: 1 },
+    }
     : linkVariants;
 
   const navLinks = [
@@ -77,13 +77,13 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="relative z-50 flex items-center justify-between mx-6 py-4 md:mx-10 md:py-6 bg-[#080B14] border-b border-[#293349]">
+    <nav className="relative z-50 flex items-center justify-between mx-6 py-4 md:mx-15 md:py-6 bg-background border-b border-border">
       <a
         href="#home"
         onClick={closeMenu}
-        className="text-3xl font-bold text-white"
+        className="text-3xl font-bold text-text"
       >
-        SM<span className="text-[#7D5CFF]">.</span>
+        SM<span className="text-purple">.</span>
       </a>
       {/* Desktop navigation */}
       <div className="hidden items-center gap-8 md:flex">
@@ -91,7 +91,7 @@ const NavBar = () => {
           <motion.a
             key={link.href}
             href={link.href}
-            className="text-lg text-gray-200 transition-colors hover:text-[#21D1ED]"
+            className="text-lg text-text-secondary transition-colors hover:text-cyan"
             whileTap={{
               scale: 0.95,
             }}
@@ -106,7 +106,7 @@ const NavBar = () => {
           type="button"
           onClick={toggleMenu}
           whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
-          className="flex size-11 items-center justify-center rounded-lg border border-[#293349] text-gray-300 transition-colors hover:border-[#7D5CFF]"
+          className="flex size-11 items-center justify-center rounded-lg border border-border text-text-secondary transition-colors hover:border-purple"
           aria-label={
             isMenuOpen ? "Close navigation menu" : "Open navigation menu"
           }
@@ -149,7 +149,7 @@ const NavBar = () => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="absolute right-0 top-14 w-64 origin-top-right overflow-hidden rounded-xl border border-[#293349] bg-[#080B14] p-3 shadow-2xl shadow-black/30"
+              className="absolute right-0 top-14 w-64 origin-top-right overflow-hidden rounded-xl border border-border bg-background p-3 shadow-2xl shadow-black/30"
             >
               <motion.div className="flex flex-col gap-1">
                 {navLinks.map((link) => (
@@ -164,14 +164,14 @@ const NavBar = () => {
                         : { x: 4, backgroundColor: "rgba(125, 92, 255, 0.12)" }
                     }
                     whileTap={shouldReduceMotion ? undefined : { scale: 0.98 }}
-                    className="group flex items-center justify-between rounded-lg px-3 py-3 text-lg font-medium text-gray-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7D5CFF]"
+                    className="group flex items-center justify-between rounded-lg px-3 py-3 text-lg font-medium text-text-secondary transition-colors hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
                   >
                     <span>{link.label}</span>
 
                     <ArrowUpRight
                       size={16}
                       aria-hidden="true"
-                      className="text-gray-500 transition-colors group-hover:text-[#21D1ED]"
+                      className="text-border transition-colors group-hover:text-cyan"
                     />
                   </motion.a>
                 ))}

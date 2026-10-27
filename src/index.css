@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+:root {
+  --portfolio-background: #080b14;
+  --portfolio-card: #111726;
+  --portfolio-border: #293349;
+  --portfolio-purple: #7d5cff;
+  --portfolio-cyan: #21d1ed;
+  --portfolio-text: #f7f9ff;
+  --portfolio-text-secondary: #9ca3af;
+  --portfolio-text-green: #33d499;
+}
+
+@theme inline {
+  --color-background: var(--portfolio-background);
+  --color-card: var(--portfolio-card);
+  --color-border: var(--portfolio-border);
+  --color-purple: var(--portfolio-purple);
+  --color-cyan: var(--portfolio-cyan);
+  --color-text: var(--portfolio-text);
+  --color-text-secondary: var(--portfolio-text-secondary);
+  --color-text-green: var(--portfolio-text-green);
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
