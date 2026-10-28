@@ -90,7 +90,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="relative bg-background px-6 py-16 text-text sm:px-8 md:py-20"
+            className="relative overflow-hidden bg-background px-6 text-text sm:px-8 py-20 md:py-28"
         >
             <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
                 {/* Left: Introduction */}
@@ -125,7 +125,7 @@ const About = () => {
                     </p>
 
                     <div className="flex flex-wrap gap-3 pt-1">
-                        {["HTML", "CSS", "JavaScript", "TailwindCSS", "React", "Node.js", "MongoDB", "Next.js", "TypeSctipt", "MySQL", "REST", "PostgreSQL"].map((technology) => (
+                        {["HTML", "CSS", "JavaScript", "TailwindCSS", "React", "Node.js", "MongoDB", "Next.js", "TypeScript", "MySQL", "REST", "PostgreSQL"].map((technology) => (
                             <span
                                 key={technology}
                                 className="rounded-full border border-border bg-card px-4 py-2 text-sm text-text-secondary"

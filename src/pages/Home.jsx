@@ -1,5 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { TbBrandLinkedinFilled } from "react-icons/tb";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -72,14 +74,11 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-wrap items-center gap-4"
           >
+            {/* Explore Projects */}
             <motion.a
               href="#projects"
-              whileHover={
-                shouldReduceMotion ? undefined : { scale: 1.04 }
-              }
-              whileTap={
-                shouldReduceMotion ? undefined : { scale: 0.97 }
-              }
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
               transition={{ duration: 0.2 }}
               className="inline-flex items-center gap-2 rounded-xl bg-purple px-5 py-3 text-sm font-semibold text-text shadow-lg shadow-purple/20 transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan"
             >
@@ -87,19 +86,43 @@ export default function Hero() {
               <ArrowUpRight size={18} aria-hidden="true" />
             </motion.a>
 
+            {/* Contact Me */}
             <motion.a
               href="#contact"
-              whileHover={
-                shouldReduceMotion ? undefined : { scale: 1.04 }
-              }
-              whileTap={
-                shouldReduceMotion ? undefined : { scale: 0.97 }
-              }
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
               transition={{ duration: 0.2 }}
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-5 py-3 text-sm font-semibold text-text transition-colors hover:border-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
             >
               Contact Me
             </motion.a>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              <motion.a
+                href="https://github.com/Satyajit799"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my GitHub profile"
+                whileHover={shouldReduceMotion ? undefined : { scale: 1.15, y: -3 }}
+                whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
+                className="text-3xl text-text transition-colors hover:text-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple rounded-md"
+              >
+                <FaGithubSquare size={25} aria-hidden="true" />
+              </motion.a>
+
+              <motion.a
+                href="https://www.linkedin.com/in/satyajit-mohanty-b79846230/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my LinkedIn profile"
+                whileHover={shouldReduceMotion ? undefined : { scale: 1.15, y: -3 }}
+                whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
+                className="text-3xl text-text transition-colors hover:text-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan rounded-md"
+              >
+                <TbBrandLinkedinFilled size={25} aria-hidden="true" />
+              </motion.a>
+            </div>
           </motion.div>
         </div>
 
