@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaGithubSquare } from "react-icons/fa";
-import { profilePic } from '../assets/profilePic.webp';
+import profilePic from '../assets/profilePic.webp';
 
 
 export default function Hero() {
