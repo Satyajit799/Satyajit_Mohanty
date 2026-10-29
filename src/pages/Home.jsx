@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaGithubSquare } from "react-icons/fa";
 
+
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
@@ -150,7 +151,7 @@ export default function Hero() {
             {/* Replace this placeholder with your profile image */}
             <div className="text-center">
               <div className="mx-auto mb-5 flex size-28 items-center justify-center rounded-full border border-purple/50 bg-purple/10 text-4xl font-bold text-cyan sm:size-36 sm:text-5xl">
-                SM
+                <img src="/src/assets/profilePic.webp" className="w-full h-full rounded-full object-cover p-1" alt="" />
               </div>
 
               <p className="text-xl font-semibold text-text">

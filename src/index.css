@@ -5,6 +5,7 @@
   --portfolio-card: #111726;
   --portfolio-border: #293349;
   --portfolio-purple: #7d5cff;
+  --portfolio-purple-light: #B9A8FF;
   --portfolio-cyan: #21d1ed;
   --portfolio-text: #f7f9ff;
   --portfolio-text-secondary: #9ca3af;
@@ -16,6 +17,7 @@
   --color-card: var(--portfolio-card);
   --color-border: var(--portfolio-border);
   --color-purple: var(--portfolio-purple);
+  --color-purple-light: var(--portfolio-purple-light: #B9A8FF;);
   --color-cyan: var(--portfolio-cyan);
   --color-text: var(--portfolio-text);
   --color-text-secondary: var(--portfolio-text-secondary);
