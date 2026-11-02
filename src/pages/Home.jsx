@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { TbBrandLinkedinFilled } from "react-icons/tb";
 import { FaGithubSquare } from "react-icons/fa";
 import profilePic from '../assets/profilePic.webp';
@@ -97,6 +97,18 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-background px-5 py-3 text-sm font-semibold text-text transition-colors hover:border-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple"
             >
               Contact Me
+            </motion.a>
+
+            <motion.a
+              href="/Satyajit-Mohanty-Resume.pdf"
+              whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+              whileTap={shouldReduceMotion ? undefined : { scale: 0.97 }}
+              transition={{ duration: 0.2 }}
+              download="Satyajit-Mohanty-Resume.pdf"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-purple/50 bg-purple/10 px-5 py-3 font-medium text-white transition-all duration-300 hover:border-purple hover:bg-purple/20"
+            >
+              <Download size={18} />
+              Download Resume
             </motion.a>
 
             {/* Social Links */}
